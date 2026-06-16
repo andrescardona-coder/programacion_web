@@ -1,0 +1,35 @@
+/*Animación de entrada: las tarjetas aparecen desde abajo con face*/
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0; /*Invisible*/
+        transform: translate(20px); /*20px abajo de su posición final*/
+    }
+    to{
+        opacity: 1; /*Visible*/
+        transform: translateY(0); /*Posición final*/
+    }
+}
+
+/*:host es el elemento raíz del componente (el <app-movie-card> en el DOM)*/
+:host{
+    /*Aplicar la animación al aparecer*/
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.card {
+  cursor: pointer;
+  /*Transición suave para hover*/
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.card-img-top {
+  height: 400px;
+  object-fit: cover;  /*recorta sin deformar*/
+}
+

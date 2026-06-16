@@ -1,0 +1,60 @@
+<!-- Sección: Populares -->
+<h2 class="mb-4">🔥 Películas populares</h2>
+
+@if (cargando) {
+  <div class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+} @else if (error) {
+  <div class="alert alert-danger">
+    {{ error }}
+    <button class="btn btn-outline-danger btn-sm ms-2" (click)="cargarPeliculas()">Reintentar</button>
+  </div>
+} @else {
+  <div class="row g-4">
+    @for (movie of peliculas; track movie.id) {
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <app-movie-card
+          [movie]="movie"
+          [esFavorita]="esFavorita(movie.id)"
+          (toggleFavorito)="toggleFavorito($event)" />
+      </div>
+    } @empty {
+      <p class="text-muted">No hay películas para mostrar</p>
+    }
+  </div>
+}
+
+<!-- Sección: Mejor valoradas -->
+<h2 class="mb-4 mt-5">⭐ Mejor valoradas</h2>
+
+<div class="row g-4">
+  @for (movie of peliculasTopRated; track movie.id) {
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <app-movie-card
+        [movie]="movie"
+        [esFavorita]="esFavorita(movie.id)"
+        (toggleFavorito)="toggleFavorito($event)" />
+    </div>
+  } @empty {
+    <p class="text-muted">No hay películas para mostrar</p>
+  }
+</div>
+
+<!-- Sección: Próximos estrenos -->
+<h2 class="mb-4 mt-5">📅 Próximos estrenos</h2>
+
+<div class="row g-4">
+  @for (movie of peliculasUpcoming; track movie.id) {
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <app-movie-card
+        [movie]="movie"
+        [esFavorita]="esFavorita(movie.id)"
+        (toggleFavorito)="toggleFavorito($event)" />
+    </div>
+  } @empty {
+    <p class="text-muted">No hay películas para mostrar</p>
+  }
+</div>
