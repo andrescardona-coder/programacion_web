@@ -1,0 +1,173 @@
+/*Selector universal */
+{
+ box-sizing:border-box;
+}
+
+/*Selector de elemento (se aplica a todas las etiquetas <p>)*/
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2d2d2d;
+}
+
+/*Selector de clase (se crea una clase para los elementos destacados)*/
+.destacado {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-left: 5px solid #3a6b8f;
+    font-weight: 500;
+    color: #1e1e1e
+}
+
+/*Selector de ID para un elemento unico*/
+#educacion {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+#educacion caption {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1e1e1e;
+    text-align: left;
+}
+
+#educacion th {
+    background-color: #f0f0f0;
+    color: #1e1e1e;
+    font-weight: 600;
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #d0d0d0;
+}
+
+/*Selector de atributo*/
+/*Selecciona todos los elementos que tengan Intagram en su href*/
+a[href*="instagram"] {
+    color: #3a6b8f;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a[href*="instagram"]:hover{
+    color: #1e1e1e;
+    text-decoration: underline;
+}
+
+/*Selector de descendiente (todos los td dentro de table)*/
+table td {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    color: #2d2d2d;
+}
+table tr:hover{
+    background-color: #f9f9f9;
+}
+
+/*Hijo directo (<li> que son hijos directos de <ul>)*/
+ul > li {
+    list-style-type: square;
+    margin-left: 20px;
+    color: #2d2d2d;
+}
+
+/*Hermano adyacente (el primer <p> después de un <h2>)*/
+h2 + p {
+    font-style: italic;
+    color: #4a4a4a;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/*Hermano general (todos los <p> después de <h1>)*/
+h1 ~ p {
+    letter-spacing: 0.5px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+/*Posicionamiento estatico por defecto*/
+h2 {
+    position: static; /* Es el valor por defecto, no hace nada especial */
+    color: #1e1e1e;
+    border-bottom: 3px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/*Posicionamiento relativo (se mueve desde la posición original)*/
+.destacado {
+    position: relative;
+    top: 10px;      /* Se mueve 10px hacia abajo desde donde estaba */
+    left: 20px;      /* Se mueve 20px hacia la derecha */
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-left: 5px solid #3a6b8f;
+}
+
+/*Posicionamiento absoluto (se posiciona respecto al contenedor )*/
+
+h4::after {
+    position: absolute;
+    top: -20px;      /* Se coloca 20px ARRIBA del h2 */
+    right: 0;        /* Pegado a la derecha */
+    font-size: 20px;
+    background-color: #4a4a4a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/*Posicionamiento fijo (se fija a la pantalla aunque se haga scroll)*/
+.fixed {
+    position: fixed;
+    bottom: 20px;    /* Pegado abajo */
+    right: 20px;     /* Pegado a la derecha */
+    background-color: #2d2d2d;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.fixed-notice:hover {
+    background-color: #1e1e1e;
+}
+
+/*Posicionamiento pegajoso*/
+h1 {
+    position: sticky;
+    top: 0;          /* Cuando llega al tope, se pega */
+    background-color: #ffffff;
+    color: #1e1e1e;
+    padding: 20px 0;
+    margin: 30px 0 20px 0;
+    z-index: 50;
+    border-radius: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(7, 8, 11, 1);
+}
+
+
+.instagram-container {
+    width: 100%;
+    max-width: 580px;        /* Mismo ancho máximo que pide Instagram */
+    padding: 0 10px;          /* Un poco de espacio a los lados */
+    box-sizing: border-box;
+}
+
+.instagram-container iframe {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+

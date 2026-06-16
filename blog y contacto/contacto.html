@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Página de Contacto</title>
+
+</head>
+
+<!--Es todo el contenido como tal de la pagina-->
+<body>
+
+<!--Es la cabecera de la pagina-->
+    <h1>Contáctanos</h1>
+    <p>¡AnDa está aquí para ayudarte!</p>
+
+<!--SECCIÓN 1: FORMULARIO DE CONTACTO
+    <form>: Contenedor para el formulario.
+    action="#": Los datos se envían a la misma página (temporal). -->
+<form action="#">
+    <!--label: Asocia un texto con un campo del formulario.
+        for="nombre": Conecta con el input que tiene id="nombre".
+        input type="text": Campo de texto de una sola línea.
+        name="nombre": Nombre del campo cuando se envía el formulario.-->
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <!--<br>: Salto de línea (break). Crea un espacio entre elementos.-->
+    <br><br>
+
+    <label for="email">Correo electrónico:</label>
+    <!--type="email": Valida que el texto ingresado tenga formato de email (con @ y .)-->
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    <label for="mensaje">Mensaje:</label>
+    <br>
+    <!--<textarea>: Campo de texto MULTILÍNEA (varias líneas).
+        rows="5": Altura de 5 líneas.
+        cols="40": Ancho de 40 caracteres.-->
+    <textarea id="mensaje" name="mensaje" rows="5" cols="40"></textarea>
+    <br><br>
+
+    <!--<button type="submit">: Botón que envía el formulario.
+        type="submit": Al hacer clic, envía los datos al servidor.-->
+    <button type="submit">Enviar mensaje</button>
+</form>
+
+    <!--<hr> linea horizontal separadora-->
+    <hr>
+
+    <!--Segunda sección: información de contacto-->
+        <h2>Información de contacto</h2>
+
+<!--<table>: Crea una tabla.
+    border="1": Grosor del borde de la tabla en píxeles
+    cellpadding="8": Espacio interior entre el borde de la celda y el contenido.-->
+<table border="1" cellpadding="8">
+            <tr> <!--Fila de la tabla
+                     th: celda del encabezado-->
+                <th scope="col">Departamento</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Email</th>
+                <th scope="col">Horario</th>
+            </tr>
+
+            <tr>
+                <!--td: información de la celda-->
+                <th scope="row">Atención al cliente</th>
+                <td>+57 3008148640</td>
+                <td>atencion@anda.com</td>
+                <td>Lun-Vie 8am-6pm</td>
+            </tr>
+            <tr>
+                <th scope="row">Soporte técnico</th>
+                <td>+57 316 4124472</td>
+                <td>soporte@anda.com</td>
+                <td>Lun-Sab 6am-10pm</td>
+            </tr>
+            <tr>
+                <th scope="row">Ventas</th>
+                <td>+57 3108763367</td>
+                <td>ventas@anda.com</td>
+                <td>Lun-Vie 8am-6pm</td>
+            </tr>
+        </table>
+
+    <!--Tercera sección: mapa-->
+        <h2>Nuestra ubicación</h2>
+        <p>Visítanos en nuestras oficinas centrales:</p>
+
+        <!--<iframe>: Ventana incrustada que muestra otra página
+            src: La URL del mapa
+            allowfullscreen: Permite ver en pantalla completa
+            loading="lazy": Carga el mapa solo cuando el usuario se acerca a él (ahorra recursos)-->
+        <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d993.5738051252874!2d-75.49278304933996!3d5.055815353639216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1771509950536!5m2!1ses!2sco"
+                allowfullscreen=""
+                loading="lazy">
+        </iframe>
+
+        <!--<small>: Texto más pequeño para información secundaria-->
+        <p><small>📍 Universidad de Caldas, Manizales, Caldas</small></p>
+
+<!-- Footer: Pie de página -->
+<footer>
+    <p>2026 AnDa. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
